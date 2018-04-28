@@ -29,14 +29,14 @@
 接下来要安装中文支持
 1、查看可用的中文安装包
 
-''' 
-#  yum list kde*chinese
-'''
+
+> #  yum list kde*chinese
+
 
 2、安装中文包
-'''
-# yum install kde-l10n-Chinese.noarch
-'''
+
+> # yum install kde-l10n-Chinese.noarch
+
 3、修改界面
 在 系统设置=>语系，添加使用简体中文即可。需要重启电脑
 安装中文字体可以参考这个网址http://www.centoscn.com/image-text/setup/2015/0402/5072.html
@@ -54,9 +54,9 @@
 3.1 执行CentOS7 最小安装
 
 去官网下载CentOS-7.0-1406-x86_64-Minimal.iso，然后刻录光盘，安装之。安装完成后执行yum update更新系统。然后，执行
-'''
-# yum install epel-release
-'''
+
+> # yum install epel-release
+
 安装额外包yum源（extra package for Enterprise Linux）。
 
 3.2 安装X Window system
@@ -73,12 +73,12 @@
 在CentOS6可以使用yum groupinstall "Chinese support"一次性安装，但是CentOS7下，不能这么安装，没有这个安装组，所以需要单独安装每个包。我只安装了一个楷体字体：yum install cjkuni-ukai-fonts。 
 【增加字体】 
 把Windows系统下C:\Windows\Fonts目录下需要的字体文件复制到CentOS的/usr/share/fonts/chinese/目录下，然后执行如下命令即可安装这些字体：
-'''
-cd /usr/share/fonts/chinese/ # 切换到新字体目录
+
+>cd /usr/share/fonts/chinese/ # 切换到新字体目录
 mkfontscale # 在当前目录下生成fonts.scale文件
 mkfontdir   # 在当前目录下生成fonts.dir文件
 fc-cache -fv # 重新建立字体缓存
-'''
+
 关于输入法，有两个概念也区分。“输入法平台”和“输入法”，输入法平台是为具体的输入法提供实现接口，并与X环境实现对接。目前广泛采用的输入法平台有:fictx，scim，ibus。最新的是ibus，也是gnome的默认设置。这里我们就选择ibus平台。 
 主要需要安装如下包：
 
@@ -101,12 +101,12 @@ gtk2/3-immodule-xim，这个是输入法候选字显示UI。我就是因为这�
 网上参考的解决方法：
 
 (应该可以吧，我还是选择了保守的方法)
-'''
-vim  /boot/grub2/grub.cfg
-'''
+
+>vim  /boot/grub2/grub.cfg
+
 在### END /etc/grub.d/00_header ###之后添加：
- '''
- ### BEGIN /etc/grub.d/30_os-prober ###
+ 
+> ### BEGIN /etc/grub.d/30_os-prober ###
 menuentry 'Windows 10 (loader) (on /dev/sda1)' --class windows --class os $menuentry_id_option 'osprober-chain-140E68540E6830C2' {
 insmod part_msdos
 insmod ntfs
@@ -114,7 +114,7 @@ set root='hd0,msdos1'
 chainloader +1
 }
  ### END /etc/grub.d/30_os-prober ###
-'''
+
 我的解决办法：
 
 1.添加源 
