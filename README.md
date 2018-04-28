@@ -28,9 +28,11 @@
 接下来由于是迷你版本，所以需要手动安装桌面，先安装X window system,然后再安装genome或者kde，我选择kde。接着用startx启动桌面。
 接下来要安装中文支持
 1、查看可用的中文安装包
+
 ''' 
 #  yum list kde*chinese
 '''
+
 2、安装中文包
 '''
 # yum install kde-l10n-Chinese.noarch
