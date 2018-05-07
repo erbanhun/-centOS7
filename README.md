@@ -128,7 +128,7 @@ chainloader +1
 5.然后就好了，出现了win8的启动引导提示（不知道为什么是win8，难道win8和win10底层标识是一样的？）
 
 
-##2. 如何用命令连wifi
+## 2. 如何用命令连wifi
 
 > 无线的话还是用networkmanager最好
 命令行下用nmtui
