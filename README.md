@@ -129,5 +129,6 @@ chainloader +1
 
 
 ##2. 如何用命令连wifi
+
 > 无线的话还是用networkmanager最好
 命令行下用nmtui
